@@ -16,7 +16,7 @@ def deviceListView(request):
 
 @login_required
 def deviceDetailView(request,token):
-    auth_token = Token.objects.get(user=request.user)
+    # auth_token = Token.objects.get(user=request.user)
     device = Device.objects.get(token=token)
-    context = {"device":device,"api_key":auth_token}
+    context = {"device":device,"api_key":"ek5EjO2"}
     return render(request, "tracker/device_detail.html",context)

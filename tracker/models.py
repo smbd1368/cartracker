@@ -4,7 +4,7 @@ from .utils import create_device_token
 
 class Device(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True
+        "usermanagement.JustPackUser", on_delete=models.CASCADE, null=True, blank=True
     )
     name = models.CharField(max_length=255)
     token = models.CharField(max_length=15, unique=True, blank=True)

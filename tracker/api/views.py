@@ -16,6 +16,7 @@ class DeviceListView(APIView):
         """
         devices = Device.objects.filter(user=request.user.id)
         serializer = DeviceSerializer(devices, many=True)
+        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
